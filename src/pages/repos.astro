@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GradientText from '../components/GradientText.astro';
+
+async function getNodeRepos() {
+  const response = await fetch('https://api.github.com/orgs/nodejs/repos?per_page=100&sort=stars');
+  const repos = await response.json();
+  return repos;
+}
+
+const repos = await getNodeRepos();
+---
+
+<Layout title="Node.js Repositories">
+  <div class="container mx-auto px-4 py-12">
+    <GradientText as="h1" class="text-4xl font-bold mb-8 text-center">
+      Node.js Repositories
+    </GradientText>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {repos.map((repo: any) => (
+        <a href={repo.html_url} target="_blank" rel="noopener noreferrer" 
+           class="p-6 rounded-lg bg-nue-primary/10 border border-nue-primary/20 hover:border-nue-secondary/50 transition-all duration-200 hover:transform hover:scale-[1.02]">
+          <h3 class="text-xl font-bold mb-2 text-nue-secondary">{repo.name}</h3>
+          <p class="text-sm text-nue-light/80 mb-4">{repo.description}</p>
+          <div class="flex items-center space-x-4 text-sm text-nue-light/60">
+            <span class="flex items-center">
+              ⭐ {repo.stargazers_count.toLocaleString()}
+            </span>
+            <span class="flex items-center">
+              🔀 {repo.forks_count.toLocaleString()}
+            </span>
+            <span>{repo.language}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>

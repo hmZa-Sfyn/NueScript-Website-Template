@@ -1,0 +1,52 @@
+{
+  "official": [
+    {
+      "name": "@nuescript/core",
+      "version": "1.0.0",
+      "description": "Core language runtime and standard library",
+      "downloads": "50K",
+      "github": "nuescript/core",
+      "npm": "@nuescript/core",
+      "features": [
+        "Core runtime implementation",
+        "Standard library",
+        "Built-in types and utilities"
+      ]
+    },
+    {
+      "name": "@nuescript/test",
+      "version": "1.0.0",
+      "description": "Testing framework for NueScript applications",
+      "downloads": "30K",
+      "github": "nuescript/test",
+      "npm": "@nuescript/test",
+      "features": [
+        "Test runner",
+        "Assertion library",
+        "Code coverage tools"
+      ]
+    },
+    {
+      "name": "@nuescript/web",
+      "version": "1.0.0",
+      "description": "Web development framework for NueScript",
+      "downloads": "25K",
+      "github": "nuescript/web",
+      "npm": "@nuescript/web",
+      "features": [
+        "DOM manipulation",
+        "Component system",
+        "State management"
+      ]
+    }
+  ],
+  "community": [
+    {
+      "name": "nuescript-react",
+      "version": "0.5.0",
+      "description": "React bindings for NueScript",
+      "author": "community",
+      "downloads": "10K"
+    }
+  ]
+}

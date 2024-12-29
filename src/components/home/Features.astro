@@ -1,0 +1,48 @@
+---
+import { Icon } from 'astro-icon';
+
+const features = [
+  {
+    icon: 'simple',
+    title: 'Simple & Elegant',
+    description: 'Clean syntax that makes code readable and maintainable.'
+  },
+  {
+    icon: 'type-safe',
+    title: 'Type Safe',
+    description: 'Catch errors early with our advanced type system.'
+  },
+  {
+    icon: 'fast',
+    title: 'Blazing Fast',
+    description: 'Optimized runtime performance and quick compilation.'
+  },
+  {
+    icon: 'tooling',
+    title: 'Modern Tooling',
+    description: 'First-class IDE support and developer tools.'
+  },
+  {
+    icon: 'ecosystem',
+    title: 'Rich Ecosystem',
+    description: 'Growing library of packages and tools.'
+  },
+  {
+    icon: 'community',
+    title: 'Active Community',
+    description: 'Friendly community and comprehensive resources.'
+  }
+];
+---
+
+<section class="py-20">
+  <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Why NueScript?</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+    {features.map(feature => (
+      <div class="p-6 rounded-lg bg-nue-primary/10 border border-nue-primary/20 hover:border-nue-secondary/50 transition-all duration-300 hover:transform hover:scale-[1.02]">
+        <h3 class="text-xl font-bold mb-4 text-nue-secondary">{feature.title}</h3>
+        <p class="text-nue-light/80">{feature.description}</p>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/home/Features.astro';
+import CodeExample from '../components/CodeExample.astro';
+import Showcase from '../components/home/Showcase.astro';
+
+const stats = [
+  { number: "10K+", label: "Downloads" },
+  { number: "5K+", label: "GitHub Stars" },
+  { number: "1K+", label: "Discord Members" },
+  { number: "100+", label: "Contributors" }
+];
+---
+
+<Layout title="Home">
+  <div class="min-h-screen">
+    <Hero />
+    
+    <div class="container mx-auto px-4 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
+        {stats.map(stat => (
+          <div class="text-center">
+            <div class="text-4xl font-bold text-nue-secondary mb-2">{stat.number}</div>
+            <div class="text-nue-light/60">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <Features />
+    <CodeExample />
+    <Showcase />
+
+    <section class="py-20 text-center">
+      <h2 class="text-4xl font-bold mb-8 gradient-text">Ready to Get Started?</h2>
+      <div class="flex justify-center space-x-4">
+        <a href="/docs/getting-started" class="bg-nue-secondary hover:bg-nue-secondary/90 text-nue-dark px-8 py-3 rounded-lg transition-colors">
+          Read the Docs
+        </a>
+        <a href="/playground" class="border border-nue-secondary text-nue-secondary hover:bg-nue-secondary/10 px-8 py-3 rounded-lg transition-colors">
+          Try Online
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>

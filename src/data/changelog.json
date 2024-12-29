@@ -1,0 +1,52 @@
+{
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2024-01-15",
+      "type": "major",
+      "codename": "Aurora",
+      "description": "First stable release of NueScript with complete language features",
+      "changes": [
+        {
+          "type": "feature",
+          "title": "Initial release of NueScript",
+          "description": "Complete implementation of core language features"
+        },
+        {
+          "type": "feature",
+          "title": "Type system implementation",
+          "description": "Advanced type system with inference and generics"
+        },
+        {
+          "type": "feature",
+          "title": "Standard library",
+          "description": "Comprehensive standard library with common utilities"
+        }
+      ]
+    },
+    {
+      "version": "0.9.0",
+      "date": "2023-12-01",
+      "type": "beta",
+      "codename": "Nebula",
+      "description": "Major beta release with significant improvements",
+      "changes": [
+        {
+          "type": "enhancement",
+          "title": "Pattern matching improvements",
+          "description": "Enhanced pattern matching with exhaustiveness checking"
+        },
+        {
+          "type": "enhancement",
+          "title": "Type inference",
+          "description": "Improved type inference engine"
+        },
+        {
+          "type": "fix",
+          "title": "Performance optimizations",
+          "description": "Major performance improvements in compiler and runtime"
+        }
+      ]
+    }
+  ]
+}

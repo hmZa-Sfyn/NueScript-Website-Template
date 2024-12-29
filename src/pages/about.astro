@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GradientText from '../components/GradientText.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="About">
+  <div class="container mx-auto px-4 py-12">
+    <GradientText as="h1" class="text-4xl font-bold mb-8 text-center">
+      About NueScript
+    </GradientText>
+    
+    <div class="max-w-3xl mx-auto space-y-8">
+      <p class="text-lg text-nue-light/80 text-center">
+        NueScript is a modern programming language designed for the future of software development.
+        Built with simplicity, type safety, and developer experience in mind.
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card
+          title="Our Mission"
+          description="To create a programming language that makes development joyful, safe, and productive."
+        />
+        <Card
+          title="Our Vision"
+          description="To become the go-to language for modern application development across all platforms."
+        />
+      </div>
+      
+      
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GradientText from '../components/GradientText.astro';
+import Card from '../components/Card.astro';
+
+const authors = [
+  {
+    name: "Sarah Chen",
+    role: "Language Designer",
+    description: "Creator of NueScript's core design principles and type system."
+  },
+  {
+    name: "Alex Rodriguez",
+    role: "Core Team Lead",
+    description: "Leading the development of the NueScript compiler and runtime."
+  },
+  {
+    name: "Maya Patel",
+    role: "Tooling Engineer",
+    description: "Developing the IDE support, LSP, and developer tools."
+  }
+];
+---
+
+<Layout title="Authors">
+  <div class="container mx-auto px-4 py-12">
+    <GradientText as="h1" class="text-4xl font-bold mb-8 text-center">
+      Meet the Team
+    </GradientText>
+
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      {authors.map(author => (
+        <div class="p-6 rounded-lg bg-nue-primary/10 border border-nue-primary/20">
+          <h3 class="text-xl font-bold mb-2 text-nue-secondary">{author.name}</h3>
+          <div class="text-sm text-nue-light/60 mb-4">{author.role}</div>
+          <p class="text-nue-light/80">{author.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

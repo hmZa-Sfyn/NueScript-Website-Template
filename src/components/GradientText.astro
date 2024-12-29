@@ -1,0 +1,12 @@
+---
+interface Props {
+  as?: keyof HTMLElementTagNameMap;
+  class?: string;
+}
+
+const { as: Tag = 'span', class: className = '' } = Astro.props;
+---
+
+<Tag class:list={['gradient-text', className]}>
+  <slot />
+</Tag>

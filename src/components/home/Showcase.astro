@@ -1,0 +1,36 @@
+---
+const showcaseProjects = [
+  {
+    name: "CloudScale",
+    description: "Cloud infrastructure management platform",
+    image: "/images/showcase/cloudscale.png"
+  },
+  {
+    name: "DataFlow",
+    description: "Real-time data processing pipeline",
+    image: "/images/showcase/dataflow.png"
+  },
+  {
+    name: "DevSpace",
+    description: "Developer collaboration platform",
+    image: "/images/showcase/devspace.png"
+  }
+];
+---
+
+<section class="py-20 bg-nue-primary/5">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Built with NueScript</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {showcaseProjects.map(project => (
+        <div class="rounded-lg overflow-hidden bg-nue-primary/10 border border-nue-primary/20 hover:border-nue-secondary/50 transition-all duration-300">
+          <div class="aspect-video bg-nue-primary/20"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-nue-secondary">{project.name}</h3>
+            <p class="text-nue-light/80">{project.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

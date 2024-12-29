@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import DocsSidebar from '../../components/docs/DocsSidebar.astro';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('docs');
+  return docs.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+  <div class="flex min-h-screen">
+    <DocsSidebar />
+    <main class="flex-1 ml-64 p-8">
+      <article class="prose prose-invert max-w-3xl mx-auto">
+        <h1>{entry.data.title}</h1>
+        <Content />
+      </article>
+    </main>
+  </div>
+</Layout>
+
+<style>
+  .prose {
+    --tw-prose-invert-headings: theme(colors.nue.secondary);
+    --tw-prose-invert-links: theme(colors.nue.secondary);
+    --tw-prose-invert-pre-bg: theme(colors.nue.primary/0.1);
+  }
+</style>

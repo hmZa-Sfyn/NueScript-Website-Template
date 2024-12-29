@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GradientText from '../components/GradientText.astro';
+import Card from '../components/Card.astro';
+
+const packages = [
+  {
+    name: "@nuescript/core",
+    version: "1.0.0",
+    description: "Core language runtime and standard library",
+    downloads: "50K"
+  },
+  {
+    name: "@nuescript/test",
+    version: "1.0.0",
+    description: "Testing framework for NueScript applications",
+    downloads: "30K"
+  },
+  {
+    name: "@nuescript/web",
+    version: "1.0.0",
+    description: "Web development framework for NueScript",
+    downloads: "25K"
+  }
+];
+---
+
+<Layout title="Packages">
+  <div class="container mx-auto px-4 py-12">
+    <GradientText as="h1" class="text-4xl font-bold mb-8 text-center">
+      Official Packages
+    </GradientText>
+
+    <div class="max-w-4xl mx-auto space-y-6">
+      {packages.map(pkg => (
+        <div class="p-6 rounded-lg bg-nue-primary/10 border border-nue-primary/20">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h3 class="text-xl font-bold text-nue-secondary">{pkg.name}</h3>
+              <div class="text-sm text-nue-light/60">v{pkg.version}</div>
+            </div>
+            <div class="text-sm text-nue-light/60">
+              {pkg.downloads} weekly downloads
+            </div>
+          </div>
+          <p class="text-nue-light/80">{pkg.description}</p>
+          <div class="mt-4 flex space-x-4">
+            <a href={`/docs/packages/${pkg.name}`} class="text-nue-secondary hover:text-nue-secondary/80">
+              Documentation →
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

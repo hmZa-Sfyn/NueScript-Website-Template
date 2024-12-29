@@ -1,0 +1,44 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-nue-primary/10 border-t border-nue-primary/20 py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-nue-secondary font-bold mb-4">NueScript</h3>
+        <p class="text-sm text-nue-light/80">
+          The future of programming.
+          Built with ❤️ by the NueScript team.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-nue-secondary font-bold mb-4">Links</h3>
+        <ul class="space-y-2">
+          <li><a href="/docs" class="text-sm hover:text-nue-secondary">Documentation</a></li>
+          <li><a href="/packages" class="text-sm hover:text-nue-secondary">Packages</a></li>
+          <li><a href="/changelog" class="text-sm hover:text-nue-secondary">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-nue-secondary font-bold mb-4">Community</h3>
+        <ul class="space-y-2">
+          <li><a href="/authors" class="text-sm hover:text-nue-secondary">Authors</a></li>
+          <li><a href="https://github.com/nuescript" class="text-sm hover:text-nue-secondary">GitHub</a></li>
+          <li><a href="https://discord.gg/nuescript" class="text-sm hover:text-nue-secondary">Discord</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-nue-secondary font-bold mb-4">Legal</h3>
+        <ul class="space-y-2">
+          <li><a href="/privacy" class="text-sm hover:text-nue-secondary">Privacy Policy</a></li>
+          <li><a href="/terms" class="text-sm hover:text-nue-secondary">Terms of Service</a></li>
+          <li><a href="/license" class="text-sm hover:text-nue-secondary">License</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 pt-8 border-t border-nue-primary/20 text-center text-sm text-nue-light/60">
+      © {currentYear} NueScript. All rights reserved.
+    </div>
+  </div>
+</footer>

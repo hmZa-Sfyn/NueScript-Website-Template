@@ -1,0 +1,37 @@
+---
+const links = [
+  { href: '/', text: 'Home' },
+  { href: '/about', text: 'About' },
+  { href: '/docs', text: 'Docs' },
+  { href: '/changelog', text: 'Changelog' },
+  { href: '/packages', text: 'Packages' },
+  { href: '/authors', text: 'Authors' },
+];
+---
+
+<header class="fixed w-full bg-nue-dark/80 backdrop-blur-md border-b border-nue-primary/20" style="margin-bottom:70px;">
+  <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center space-x-2">
+      <pre class="text-nue-secondary font-bold">
+ _   _ _   _ _____ 
+| \ | | | | | ____|
+|  \| | | | |  _|  
+| |\  | |_| | |___ 
+|_| \_|\___/|_____|</pre>
+    </a>
+    <div class="hidden md:flex space-x-8">
+      {links.map(link => (
+        <a 
+          href={link.href}
+          class="text-nue-light hover:text-nue-secondary transition-colors duration-200"
+        >
+          {link.text}
+        </a>
+      ))}
+    </div>
+  </nav>
+</header>
+<div class="h-24"></div> <!-- Spacer for fixed header -->
+<br>
+<br>
+<br>

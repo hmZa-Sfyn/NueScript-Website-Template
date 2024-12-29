@@ -1,0 +1,45 @@
+{
+  "team": [
+    {
+      "name": "Sarah Chen",
+      "role": "Language Designer",
+      "description": "Creator of NueScript's core design principles and type system.",
+      "avatar": "/images/team/sarah.png",
+      "github": "sarahchen",
+      "twitter": "sarahchen_dev",
+      "contributions": ["Language Design", "Type System", "Core Runtime"]
+    },
+    {
+      "name": "Alex Rodriguez",
+      "role": "Core Team Lead",
+      "description": "Leading the development of the NueScript compiler and runtime.",
+      "avatar": "/images/team/alex.png",
+      "github": "alexr",
+      "twitter": "alexr_dev",
+      "contributions": ["Compiler", "Runtime", "Performance"]
+    },
+    {
+      "name": "Maya Patel",
+      "role": "Tooling Engineer",
+      "description": "Developing the IDE support, LSP, and developer tools.",
+      "avatar": "/images/team/maya.png",
+      "github": "mayap",
+      "twitter": "mayap_dev",
+      "contributions": ["IDE Support", "Developer Tools", "Documentation"]
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Jamie Wilson",
+      "role": "Community Manager",
+      "description": "Managing community engagement and developer relations.",
+      "github": "jamiew"
+    },
+    {
+      "name": "Carlos Santos",
+      "role": "Documentation Lead",
+      "description": "Leading the documentation efforts and tutorials.",
+      "github": "csantos"
+    }
+  ]
+}

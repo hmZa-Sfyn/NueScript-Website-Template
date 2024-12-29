@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GradientText from '../components/GradientText.astro';
+
+const releases = [
+  {
+    version: "1.0.0",
+    date: "2024-01-15",
+    type: "major",
+    changes: [
+      "Initial release of NueScript",
+      "Core language features and syntax",
+      "Type system implementation",
+      "Standard library"
+    ]
+  },
+  {
+    version: "0.9.0",
+    date: "2023-12-01",
+    type: "beta",
+    changes: [
+      "Pattern matching improvements",
+      "Enhanced type inference",
+      "Performance optimizations",
+      "Bug fixes and stability improvements"
+    ]
+  }
+];
+---
+
+<Layout title="Changelog">
+  <div class="container mx-auto px-4 py-12">
+    <GradientText as="h1" class="text-4xl font-bold mb-8 text-center">
+      Changelog
+    </GradientText>
+
+    <div class="max-w-3xl mx-auto space-y-8">
+      {releases.map(release => (
+        <div class="bg-nue-primary/10 rounded-lg p-6 border border-nue-primary/20">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold text-nue-secondary">v{release.version}</h2>
+            <span class="text-nue-light/60">{release.date}</span>
+          </div>
+          <ul class="space-y-2">
+            {release.changes.map(change => (
+              <li class="text-nue-light/80">• {change}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

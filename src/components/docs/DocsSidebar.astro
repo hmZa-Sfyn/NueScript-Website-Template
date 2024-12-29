@@ -1,0 +1,58 @@
+---
+const categories = [
+  {
+    title: "Getting Started",
+    items: [
+      { slug: "getting-started", title: "Introduction" },
+      { slug: "installation", title: "Installation" },
+      { slug: "quick-start", title: "Quick Start" }
+    ]
+  },
+  {
+    title: "Language Guide",
+    items: [
+      { slug: "syntax", title: "Basic Syntax" },
+      { slug: "types", title: "Type System" },
+      { slug: "functions", title: "Functions" },
+      { slug: "pattern-matching", title: "Pattern Matching" }
+    ]
+  },
+  {
+    title: "Advanced Topics",
+    items: [
+      { slug: "concurrency", title: "Concurrency" },
+      { slug: "error-handling", title: "Error Handling" },
+      { slug: "modules", title: "Modules" }
+    ]
+  }
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<aside class="w-64 h-screen overflow-y-auto fixed left-0 top-24 p-6 bg-nue-dark/50 backdrop-blur-md border-r border-nue-primary/20">
+  <nav>
+    {categories.map(category => (
+      <div class="mb-6">
+        <h3 class="text-nue-secondary font-bold mb-2">{category.title}</h3>
+        <ul class="space-y-2">
+          {category.items.map(item => (
+            <li>
+              <a
+                href={`/docs/${item.slug}`}
+                class:list={[
+                  "block py-1 px-2 rounded transition-colors",
+                  currentPath === `/docs/${item.slug}` 
+                    ? "bg-nue-secondary/20 text-nue-secondary"
+                    : "text-nue-light/80 hover:text-nue-secondary hover:bg-nue-secondary/10"
+                ]}
+              >
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </nav>
+</aside>

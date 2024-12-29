@@ -1,0 +1,20 @@
+---
+interface Props {
+  code: string;
+  language?: string;
+  title?: string;
+}
+
+const { code, language = 'nue', title } = Astro.props;
+---
+
+<div class="rounded-lg overflow-hidden">
+  {title && (
+    <div class="bg-nue-primary/20 px-4 py-2 text-sm text-nue-light/60">
+      {title}
+    </div>
+  )}
+  <pre class="bg-nue-primary/10 p-6 overflow-x-auto">
+    <code class={`language-${language}`}>{code.trim()}</code>
+  </pre>
+</div>

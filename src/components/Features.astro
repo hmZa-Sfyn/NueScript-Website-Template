@@ -1,0 +1,24 @@
+---
+import FeatureCard from './FeatureCard.astro';
+
+const features = [
+  {
+    title: "Simple Syntax",
+    description: "Clean and intuitive syntax that makes coding a joy. Focus on what matters most - your logic."
+  },
+  {
+    title: "Type Safe",
+    description: "Built-in type system that catches errors before they happen. Write code with confidence."
+  },
+  {
+    title: "Modern Tooling",
+    description: "First-class tooling support with LSP, formatter, and package manager built right in."
+  }
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+  {features.map(feature => (
+    <FeatureCard {...feature} />
+  ))}
+</div>

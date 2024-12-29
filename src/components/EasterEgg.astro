@@ -1,0 +1,38 @@
+---
+// Easter egg component that shows a hidden message when typing the Konami code
+---
+
+<div id="easter-egg" class="fixed inset-0 bg-nue-dark/95 z-50 hidden items-center justify-center">
+  <div class="text-center">
+    <pre class="text-nue-secondary text-xs md:text-base whitespace-pre">
+ _   _                ____            _       _   
+| \ | |_   _  ___    / ___|  ___ _ __(_)_ __ | |_ 
+|  \| | | | |/ _ \   \___ \ / __| '__| | '_ \| __|
+| |\  | |_| |  __/    ___) | (__| |  | | |_) | |_ 
+|_| \_|\__,_|\___|   |____/ \___|_|  |_| .__/ \__|
+                                       |_|         
+    </pre>
+    <p class="text-nue-light mt-4">You found the secret! 🎉</p>
+    <button class="mt-4 px-4 py-2 bg-nue-secondary text-nue-dark rounded" onclick="document.getElementById('easter-egg').classList.add('hidden')">
+      Close
+    </button>
+  </div>
+</div>
+
+<script>
+  const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+  let konamiIndex = 0;
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === konamiCode[konamiIndex]) {
+      konamiIndex++;
+      if (konamiIndex === konamiCode.length) {
+        document.getElementById('easter-egg')?.classList.remove('hidden');
+        document.getElementById('easter-egg')?.classList.add('flex');
+        konamiIndex = 0;
+      }
+    } else {
+      konamiIndex = 0;
+    }
+  });
+</script>
